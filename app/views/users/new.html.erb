@@ -1,0 +1,19 @@
+<%= form_tag ({controller: 'users', action: 'create', method: 'post'}) do %>
+  <label>Name</label>
+  <input name=user[name]><br></br>
+  <label>Password</label>
+  <input name=user[password]><br></br>
+  <label>Password Confirmation</label>
+  <input name=user[password_confirmation]><br></br>
+  <label>Nausea Rating (1-5)</label>
+  <input name=user[nausea]><br></br>
+  <label>Happiness Rating (1-5)</label>
+  <input name=user[happiness]><br></br>
+  <label>Number of Tickts</label>
+  <input name=user[tickets]><br></br>
+  <label>Height in Inches</label>
+  <input name=user[height]><br></br>
+  <label>Check if Owner</label>
+  <input id="user_admin" name=user[admin] type=checkbox><br></br>
+  <input type=submit value='Create User'>
+<% end %>

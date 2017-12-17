@@ -1,0 +1,21 @@
+<h1><%= @attraction.name %></h1>
+
+<p>
+   <strong>Tickets Required:</strong> <%=@attraction.tickets%> <br></br> 
+   <strong>Happiness Rating:</strong> <%=@attraction.happiness_rating%> <br></br> 
+   <strong>Naseua Rating:</strong> <%=@attraction.nausea_rating%> <br></br> 
+   <strong>Minumum Height:</strong> <%=@attraction.min_height%> <br></br> 
+</p>
+
+<br></br>
+
+<%= form_tag ({controller: 'users', action: 'update', method: 'post'}) do %>
+    <input name="_method" type="hidden" value="patch" />
+    <input type=submit value='Go on this ride'>
+<% end %>
+
+<br></br>
+
+<% if current_user.admin %>
+    <%= link_to "Edit Attraction", edit_attraction_path(@attraction) %>
+<% end %>

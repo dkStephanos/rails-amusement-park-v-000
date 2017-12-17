@@ -1,0 +1,21 @@
+<h1>Attractions!</h1>
+
+<%= render "layouts/flash" %>
+
+<% if !current_user.admin %>
+    <ul>
+        <% @attractions.each do |attraction|%>
+            <li><%= link_to "Go on #{attraction.name}", attraction %></li>
+        <% end %>
+    </ul>
+<% end %>
+
+<% if current_user.admin %>
+    <% @attractions.each do |attraction|%>
+        <li><%= link_to "Show #{attraction.name}", attraction %></li>
+    <% end %>
+    
+    <br></br>
+    
+    <%= link_to("New Attraction", new_attraction_path) %>
+<% end %>

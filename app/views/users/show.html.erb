@@ -1,0 +1,22 @@
+<h1> <%= @user.name %> </h1>
+
+<% if @user.admin %>
+    <h3>ADMIN</h3>
+<% end %>
+
+<%= render "layouts/flash" %>
+
+<div>
+    <strong>Mood:</strong> <%= @user.mood %> <br></br>
+    <strong>Nausea Rating:</strong> <%= @user.nausea %> <br></br>
+    <strong>Tickets:</strong> <%= @user.tickets %> <br></br>
+    <strong>Height:</strong> <%= @user.height %> <br></br>
+</div>
+
+<br></br>
+
+<%= link_to("See attractions", attractions_path) %>
+
+<br></br>
+
+<%= link_to("Log Out", logout_path, method: :post) %>
